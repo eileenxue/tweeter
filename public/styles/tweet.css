@@ -1,0 +1,55 @@
+.tweet-post{
+  border: 4px solid navy;
+  padding: 1em;
+  margin: 1em 0;
+}
+
+.tweet-post:hover{
+  box-shadow: 6px 6px gainsboro;
+}
+
+.tweet-post header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+.user-profile{
+  display: flex;
+  align-items: center;
+}
+
+.user-profile img{
+  width: 50px;
+  margin-right: 0.5em;
+}
+
+.tweeter-name{
+  color: dodgerblue;
+  padding-right: 0.5em;
+}
+
+.tweet-text{
+  border-bottom: 4px solid navy;
+  padding: 1em 0.5em;
+  font-size: 0.9em;
+}
+
+.tweet-post footer{
+  display: flex;
+  justify-content: space-between;
+  padding: 0.7em;
+  font-size: 0.6em;
+  font-weight: 600;
+}
+
+.tweet-post footer i{
+  padding: 0 4px;
+}
+
+.tweet-post footer i:hover{
+  color: darkorange;
+  cursor: pointer; 
+}
