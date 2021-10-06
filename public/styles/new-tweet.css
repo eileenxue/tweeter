@@ -1,5 +1,4 @@
 
-
 .new-tweet label{
   font-weight: 600;
   color: navy;
@@ -26,9 +25,14 @@
   color: navy;
 }
 
+.new-tweet .invalid{
+  color: red;
+}
+
 .new-tweet .submit{
   background-color: #4056A1;
   color: white;
   padding: 4px 8px;
   border: 1px solid #4056A1;
 }
+
