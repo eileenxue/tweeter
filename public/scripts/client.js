@@ -6,6 +6,13 @@
 
 $(document).ready(function() {
 
+  // Escape function 
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const createTweetElement = function (data) {
     const $newTweet = 
     `
@@ -17,7 +24,7 @@ $(document).ready(function() {
         </div>
         <div class="tweeter-name">${data.user.handle}</div>
       </header>
-      <div class="tweet-text">${data.content.text}</div>
+      <div class="tweet-text">${escape(data.content.text)}</div>
       <footer>
         <div class="date">${timeago.format(data.created_at)}</div>
         <div class="icon-group">
@@ -66,7 +73,7 @@ $(document).ready(function() {
     } else {
       // Submit a post request that sends serialized to server
       $.post('/tweets', data, function(){
-        console.log("post success");
+        // console.log("post success");
         loadTweets();
       });
     }
