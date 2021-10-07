@@ -73,4 +73,18 @@ $(document).ready(function() {
   
   renderTweets(tweetData);
 
+
+  // Add Event Listener to Form's Submit Button
+  $('form').submit(function (event) {
+    // alert( "Handler for .submit() called." );
+    event.preventDefault();
+    // Turn form data to serialize string
+    const data = $(this).serialize();
+    // Submit a post request that sends serialized to server
+    $.post('/tweets', data, function(){
+      console.log("post success");
+    });
+
+  });
+
 });
