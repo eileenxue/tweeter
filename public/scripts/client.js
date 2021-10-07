@@ -43,19 +43,6 @@ $(document).ready(function() {
   };
   //renderTweets(tweetData);
 
-  // Add Event Listener to Form's Submit Button
-  $('form').submit(function (event) {
-    // alert( "Handler for .submit() called." );
-    event.preventDefault();
-    // Turn form data to serialize string
-    const data = $(this).serialize();
-    // Submit a post request that sends serialized to server
-    $.post('/tweets', data, function(){
-      console.log("post success");
-    });
-
-  });
-
   // Load Tweets
   const loadTweets = function (){
     $.get('/tweets', function (data) {
@@ -64,5 +51,26 @@ $(document).ready(function() {
   };
 
   loadTweets();
+
+  // Add Event Listener to Form's Submit Button
+  $('form').submit(function (event) {
+    event.preventDefault();
+    // Turn form data to serialize string
+    const data = $(this).serialize();
+    const tweetLength = $('#tweet-text').val().length;
+
+    if (tweetLength > 140) {
+      alert("Your tweet is too long");
+    } else if (tweetLength === 0) {
+      alert("Please write some text");
+    } else {
+      // Submit a post request that sends serialized to server
+      $.post('/tweets', data, function(){
+        console.log("post success");
+        loadTweets();
+      });
+    }
+
+  });
 
 });
