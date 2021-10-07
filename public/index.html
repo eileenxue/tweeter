@@ -53,7 +53,8 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <!-- <h2>Compose Tweet</h2> -->
+        <div id="form-error" class="hide">
+        </div>
         <form action="/tweets" method="POST">
           <label for="tweet-text">What are you thinking about?</label>
           <textarea name="text" id="tweet-text" placeholder="Type here..."></textarea>
@@ -64,24 +65,7 @@
         </form>
       </section> 
       <section id="tweets-container">
-        <article class="tweet-post">
-          <header>
-            <div class="user-profile">
-              <img src="https://i.imgur.com/73hZDYK.png">
-              <div>Newton OG</div>
-            </div>
-            <div class="tweeter-name">@SirIsacc</div>
-          </header>
-          <div class="tweet-text">If I have seen further it is by standing on the shoulders of giants</div>
-          <footer>
-            <div class="date">10 days ago</div>
-            <div class="icon-group">
-              <i class="fas fa-flag"></i>
-              <i class="fas fa-retweet"></i>
-              <i class="fas fa-heart"></i>
-            </div>
-          </footer>
-        </article>
+        <!-- The tweets will be pulled from JSON file -->
       </section>
     </main>
   </body>

@@ -7,13 +7,13 @@
 $(document).ready(function() {
 
   // Escape function 
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
-  const createTweetElement = function (data) {
+  const createTweetElement = function(data) {
     const $newTweet = 
     `
       <article class="tweet-post">
@@ -38,7 +38,6 @@ $(document).ready(function() {
     return $newTweet;
   };
 
-
   // Render Tweets
   const renderTweets = function(tweets) {
     $("#tweets-container").empty();
@@ -46,38 +45,57 @@ $(document).ready(function() {
     for (tweet of tweets){
       const $tweet = createTweetElement(tweet);
       $('#tweets-container').prepend($tweet); 
-    }
+    };
   };
-  //renderTweets(tweetData);
 
   // Load Tweets
-  const loadTweets = function (){
-    $.get('/tweets', function (data) {
+  const loadTweets = function(){
+    $.get('/tweets', function(data) {
       renderTweets(data);
-    })
+    });
   };
 
   loadTweets();
 
-  // Add Event Listener to Form's Submit Button
-  $('form').submit(function (event) {
+  
+  // Error Validation
+  const $formError = $('#form-error');
+
+  const error = function(errorMessage) {
+    if (errorMessage === "exceedLength"){
+      $formError.html(`<i class="fas fa-exclamation-circle"></i> Your tweet is too long`);
+      $formError.slideDown();
+      $formError.removeClass("hide");
+    } else if (errorMessage === "noText") {
+      $formError.html(`<i class="fas fa-exclamation-circle"></i> Please type in some text`);
+      $formError.slideDown();
+      $formError.removeClass("hide");
+    } else {
+      $formError.slideUp();
+      $formError.addClass("hide");
+    };
+  };
+
+  // Add event listener to form's submit button
+  $('form').submit(function(event) {
     event.preventDefault();
     // Turn form data to serialize string
     const data = $(this).serialize();
     const tweetLength = $('#tweet-text').val().length;
 
     if (tweetLength > 140) {
-      alert("Your tweet is too long");
+      error("exceedLength");
     } else if (tweetLength === 0) {
-      alert("Please write some text");
+      error("noText");
     } else {
       // Submit a post request that sends serialized to server
       $.post('/tweets', data, function(){
-        // console.log("post success");
         loadTweets();
+        $formError.slideUp();
+        $formError.addClass("hide");
+        $('form').find("textarea").val("");
+        $('form').find(".counter").val("140");
       });
-    }
-
+    };
   });
-
 });

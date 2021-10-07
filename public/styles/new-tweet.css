@@ -40,3 +40,15 @@
   border: 1px solid navy;
 }
 
+/* Form Validation */
+#form-error{
+  padding: 0.5em;
+  border: 2px solid #ff000040;
+  font-size: 0.8em;
+  margin-bottom: 1em;
+  background-color: #ff000030;
+}
+
+.hide{
+  display: none;
+}
