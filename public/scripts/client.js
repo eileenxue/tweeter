@@ -19,7 +19,7 @@ $(document).ready(function() {
       </header>
       <div class="tweet-text">${data.content.text}</div>
       <footer>
-        <div class="date">${data.created_at}</div>
+        <div class="date">${timeago.format(data.created_at)}</div>
         <div class="icon-group">
           <i class="fas fa-flag"></i>
           <i class="fas fa-retweet"></i>
