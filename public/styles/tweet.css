@@ -36,6 +36,8 @@
   border-bottom: 4px solid navy;
   padding: 1em 0.5em;
   font-size: 0.9em;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .tweet-post footer{
