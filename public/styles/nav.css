@@ -1,7 +1,6 @@
 nav {
   height: 120px;
   width: 100%;
-  background-color: #4056A1;
   color: #FFFFFF;
   padding: 0 1.5em;
   display: flex;
@@ -10,6 +9,8 @@ nav {
   position: fixed;
   top: 0;
   z-index: 1;
+  background-color: cornflowerblue;
+  background-image: url("https://www.transparenttextures.com/patterns/black-thread-light.png");
 }
 
 .title-logo {
@@ -21,8 +22,17 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .new-tweet-btn .fa-angle-double-down{
   color: darkorange;
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  nav{
+    background-color: navy;
+    background-image: none;
+  }
 }
