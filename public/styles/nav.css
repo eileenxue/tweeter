@@ -15,7 +15,7 @@ nav {
 
 .title-logo {
   font-family: 'Bungee', sans-serif;
-  font-size: 1.8em;
+  font-size: 1.4em;
 }
 
 .new-tweet-btn {
@@ -28,11 +28,29 @@ nav {
 
 .new-tweet-btn .fa-angle-double-down{
   color: darkorange;
+  position: relative;
+}
+
+.animate {
+  flex:1;
+  opacity: 0.2;
+  animation: down 1.5s ease-out infinite;
+  top: -0.2em;
+}
+@keyframes down {
+  to {
+      opacity: 1;
+      top: 0.5em;
+  }
 }
 
 /* Desktop styles */
 @media only screen and (min-width: 1024px) {
   nav{
     background-color: navy;
+  }
+
+  .title-logo{
+    font-size: 1.8em;
   }
 }

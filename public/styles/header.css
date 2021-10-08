@@ -15,17 +15,24 @@
   max-width: 220px;
 }
 
+#main-header h2{
+  margin: 0.5em;
+}
+
 .twitter-btn{
   background-color: aliceblue;
   width: 100%;
   text-align: center;
-  padding: 0.1em;
+  padding: 0.4em;
+  display: flex;
+  justify-content: center;
 }
 
 /* Desktop styles */
 @media only screen and (min-width: 1024px) {
   #main-header{
     width: 30%;
+    max-width: 340px;
     margin-top: 200px;
     border-radius: 1em;
     box-shadow: 10px 10px gainsboro;

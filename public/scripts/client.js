@@ -58,7 +58,6 @@ $(document).ready(function() {
 
   loadTweets();
 
-  
   // Error Validation
   const $formError = $('#form-error');
 
