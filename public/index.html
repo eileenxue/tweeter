@@ -37,19 +37,18 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span class="title-logo">Tweeter</span>
+      <span class="title-logo"><i class="fab fa-twitter"></i> Tweeter</i></span>
       <div class="new-tweet-btn">
-        <span><strong>Write</strong> a new tweet</span>
+        <div><strong>Write</strong> a new tweet</div>
         <i class="fas fa-angle-double-down"></i>
       </div>
     </nav>
 
     <header id="main-header">
-      <div>
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <div>
-          <h2>The Learnaholic</h2>
+      <img src="/images/profile-hex.png"> 
+      <h2>The Learnaholic</h2>
+      <div class="twitter-btn">
+        <a href="https://twitter.com/TheLearnaholic?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @Learnaholic</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
     </header>
 
@@ -71,5 +70,8 @@
         <!-- The tweets will be pulled from JSON file -->
       </section>
     </main>
+    <span id="scroll-top">
+      <i class="fas fa-angle-double-up"></i>
+    </span>
   </body>
 </html>

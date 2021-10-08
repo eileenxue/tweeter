@@ -38,6 +38,7 @@
   color: white;
   padding: 4px 8px;
   border: 1px solid navy;
+  cursor: pointer;
 }
 
 /* Form Validation */
@@ -51,4 +52,11 @@
 
 .hide{
   display: none;
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  .new-tweet{
+    padding: 1em;
+  }
 }

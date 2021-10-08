@@ -6,13 +6,14 @@
 
 $(document).ready(function() {
 
-  // Escape function 
+  // Escape function to prevent cross-site scripting
   const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
+  // Create tweet template
   const createTweetElement = function(data) {
     const $newTweet = 
     `
@@ -98,4 +99,14 @@ $(document).ready(function() {
       });
     };
   });
+
+  // Form Toggle
+  $('.new-tweet').hide();
+
+  // When tweet button is clicked, show/hide the tweet form
+  $('.new-tweet-btn').click(function() {
+    $('.new-tweet').slideToggle();
+    $('#tweet-text').focus();
+  })
+
 });

@@ -31,6 +31,18 @@ main {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+ #scroll-top{
+  background-color: darkorange;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 2;
+  right: 1em;
+  bottom: 1em;
+  cursor: pointer;
+}
+
 /* Desktop styles */
 @media only screen and (min-width: 1024px) {
   body{
@@ -40,6 +52,6 @@ main {
 
   main {
     width: 50%;
-    margin: 170px 0 0;
+    margin: 180px 0 0;
   }
 }

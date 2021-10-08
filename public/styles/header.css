@@ -11,11 +11,23 @@
   background-image: url("https://www.transparenttextures.com/patterns/black-thread-light.png");
 }
 
+#main-header img{
+  max-width: 220px;
+}
+
+.twitter-btn{
+  background-color: aliceblue;
+  width: 100%;
+  text-align: center;
+  padding: 0.1em;
+}
+
 /* Desktop styles */
 @media only screen and (min-width: 1024px) {
   #main-header{
     width: 30%;
-    margin-top: 220px;
+    margin-top: 200px;
     border-radius: 1em;
+    box-shadow: 10px 10px gainsboro;
   }
 }
